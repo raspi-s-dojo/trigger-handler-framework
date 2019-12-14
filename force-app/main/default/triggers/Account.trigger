@@ -1,4 +1,4 @@
-trigger TriggerExample on Account (before insert, after insert, before update, after update, before delete, after delete) {
+trigger Account on Account (before insert, after insert, before update, after update, before delete, after delete) {
 
     TriggerHandler.ITrigger handler = new AccountTriggerHandler(Trigger.oldMap, Trigger.newMap, Trigger.old, Trigger.new);
 
