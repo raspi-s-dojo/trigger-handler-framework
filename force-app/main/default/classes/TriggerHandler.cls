@@ -4,12 +4,11 @@ public abstract class TriggerHandler {
     protected List<SObject> oldList {get; set;}
     protected List<SObject> newList {get; set;}
 
-    public TriggerHandler(Map<Id, SObject> oldMap,Map<Id, SObject> newMap,
-                            List<SObject> oldList, List<SObject> newList) {
+    public TriggerHandler(Map<Id, SObject> oldMap,Map<Id, SObject> newMap) {
         this.oldMap = oldMap;
         this.newMap = newMap;
-        this.oldList = oldList;
-        this.newList = newList;
+        this.oldList = oldMap.values();
+        this.newList = newMap.values();
     }
 
     public interface ITrigger {

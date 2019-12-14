@@ -1,7 +1,7 @@
 trigger TriggerExample on Account (before insert, after insert, before update, after update, before delete, after delete) {
 
     TriggerHandler.ITrigger handler = new AccountTriggerHandler(Trigger.oldMap, Trigger.newMap, Trigger.old, Trigger.new);
-    
+
     switch on Trigger.operationType {
         when BEFORE_INSERT {
             handler.bulkBeforeInsert();
