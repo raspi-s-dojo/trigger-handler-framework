@@ -7,10 +7,13 @@ public with sharing class AccountTriggerHandler extends TriggerHandler implement
 
     public void bulkBeforeInsert() {
         //Your awesome code
+        AccountHelper.setDescriptionBeforeInsert(newList);
     }
 
     public void bulkBeforeUpdate() {
         //Your awesome code
+        //AccountHelper.setDescriptionBeforeUpdateMap(newMap);
+        AccountHelper.setDescriptionBeforeUpdateList(newList);
     }
 
     public void bulkBeforeDelete() {
